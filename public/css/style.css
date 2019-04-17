@@ -1,0 +1,90 @@
+
+.container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+
+
+.slotMachine .slot{
+  height:100px;
+  background-position-x: 55%;
+  background-repeat: no-repeat;
+}
+
+
+
+/*
+ * SlotMachine
+ */
+#randomize {
+  background-color:black;
+}
+/*couleur vignette*/
+#randomize .row > div.col-sm-4 > div {
+  padding: 20px;
+  width: 140px;
+  height: 140px;
+  background: rgba(245, 245, 245, 0.783);
+  border-radius: 10%;
+  border:2px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+}
+
+#randomize .row > div.col-xs-4 > div {
+  padding-top: 40px;
+  padding-left: 40px;
+  width: 175px;
+  height: 175px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.randomizeMachine {
+  width: 100px;
+  height: 100px;
+}
+
+#randomize .btn-group {
+  margin-top: 30px;
+  width: auto;
+  margin-bottom: 15px;
+}
+
+.machineResult {
+  color: #fff;
+  text-align: center;
+  font-weight: 900;
+  height: 50px !important;
+  background: transparent !important;
+  font-size: 18px;
+  padding: 10px !important;
+}
+
+.machineContainer{
+  padding: 5px 1px 5px 1px;
+  height: 135px;
+}
+
+.slotMachine{
+  width: 36.333333%;
+  border: 5px solid #CF5178;
+  height: 100px;
+  display: inline-block;
+}
+
+#textMachine {
+  width:520px;
+  height: 67px;
+  overflow: hidden;
+  display: inline-block;
+  text-align: left;
+}
+.btn-group-justified{
+    margin: 0 auto;
+}
+
