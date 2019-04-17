@@ -29,7 +29,8 @@ class Jeux
     }
     public function setGains($score)
     {
-        if($this->getGains()>0){
+        if($this->getGains()>0)
+        {
             if($score>0)
             {
                 $this->gains += $score;

@@ -1,1 +1,13 @@
-{% extends 'base.html.twig' %}
+{% extends 'base.html.twig' %}{% block title %}Jackpot Hackaton{% endblock %}{% block body %}
+   <div class="container background">
+     <div class="row">
+       <div class="col-4">
+           <div style="background:red;">cube</div>
+       </div>
+     </div>
+   </div>    {% for oeuf in oeufs %}
+       <img src="{{ oeuf }}" width="150">
+   {% endfor %}    {% for personne in personnage %}
+       {{ personne.name }}<br>
+       <img src="{{ personne.image }}" width="150">
+   {% endfor %}{% endblock %}
