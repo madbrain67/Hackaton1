@@ -1,0 +1,30 @@
+body {
+    background: #090d00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+.bubble {
+    max-width: 700px;
+    color: white;
+    padding: 40px 40px 100px 40px;
+    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/476907/speechbubble.svg') no-repeat top center;
+    background-size: 100% 100%;
+}
+.bubble p {
+    font-style: italic;
+}
+button{
+    position: absolute;
+    top: 80%;
+    left: 80%;
+}
+img{
+    max-height: 150px;
+    max-width: 150px;
+    position: absolute;
+    top: 45%;
+    left: 61%;
+}
