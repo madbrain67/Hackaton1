@@ -1,0 +1,56 @@
+body {
+    background: #090d00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+.bubble {
+    max-width: 700px;
+    color: white;
+    padding: 40px 40px 100px 40px;
+    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/476907/speechbubble.svg') no-repeat top center;
+    background-size: 100% 100%;
+    margin-top: 7%;
+}
+.bubble p {
+    font-size: 1.5em;
+}
+.submitIndex{
+    position: absolute;
+    top: 80%;
+    left: 80%;
+}
+.lapin{
+    max-height: 150px;
+    max-width: 150px;
+    position: absolute;
+    top: 51%;
+    left: 57%;
+}
+#vignette2{
+    top: 64%;
+    left: 60%;
+}
+.card img{
+    margin: auto;
+}
+#vignette2{
+    max-height: 150px;
+    max-width: 150px;
+    position: absolute;
+    top: 25%;
+    left: 60%;
+}
+#bubble2{
+    left: 45%;
+}
+.card{
+    top: -10%;
+    border-radius: 15px;
+    background-color: #090d00;
+}
+.card h5{
+    color: #818182;
+}
