@@ -16,14 +16,14 @@ p {
 }
 
 
-p span,a {
+p span,#buttonhome {
 
-    font: 700 4em/1 "Oswald", sans-serif;
+    font: 600 3.5em/1 "Oswald", sans-serif !important;
     letter-spacing: 0;
     padding: .25em 0 .325em;
     display: block;
     margin: 0 auto;
-    text-shadow: 0 0 80px rgba(255,255,255,.5);
+    text-shadow: 0 0 100px rgba(255,255,255,.5);
 
     /* Clip Background Image */
 
@@ -34,7 +34,7 @@ p span,a {
     /* Animate Background Image */
 
     -webkit-text-fill-color: transparent;
-    -webkit-animation: aitf 80s linear infinite;
+    -webkit-animation: aitf 35s linear infinite;
 
     /* Activate hardware acceleration for smoother animations */
 
@@ -42,10 +42,12 @@ p span,a {
     -webkit-backface-visibility: hidden;
 
 }
-#divbutton{
+#divbuttonhome{
     top: 62% !important;
-    left: 12.9% !important;
-    position: absolute;
+    left: 37.9% !important;
+    position: absolute !important;
+    font-size: 0.4em !important;
+
 }
 
 /* Animate Background Image */
