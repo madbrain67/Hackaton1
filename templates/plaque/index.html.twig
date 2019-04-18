@@ -17,9 +17,8 @@
             <img style="width: 150px;height: 150px;" src="{{ personnage.image }}" class="card-img-top">
             <div class="card-body">
                 <h5 class="card-title">{{ personnage.name }}</h5>
-                <p class="card-text">
-
-                </p><a href="/Persochoisit/index{{ personnage.name| length }}" class="boutonperso btn btn-secondary btn-lg">Choisir</a>
+                <p class="card-text"></p>
+                <a href="/Persochoisit/index{{ personnage.name| length }}/{{ personnage.id }}" class="boutonperso btn btn-secondary btn-lg">Choisir</a>
                 <div/>
             </div>
         </div>

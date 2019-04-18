@@ -15,11 +15,14 @@ class Jeux
     private $score;
     private $gains;
     private $findejeux;
+    private $personnage;
 
-    public function __construct()
+    public function __construct($start = null)
     {
-        $this->score = 0;
-        $this->gains = 100;
+        if($start == null ) {
+            $this->score = 0;
+            $this->gains = 100;
+        }
     }
 
     public function getGains()
@@ -29,20 +32,18 @@ class Jeux
     }
     public function setGains($score)
     {
-        if($this->getGains()>0)
-        {
-            if($score>0)
-            {
+        if($this->getGains()>0) {
+            if($score>0) {
                 $this->gains += $score;
             }
             else{
-                $this->gains += $score;
+                $this->gains -= $score;
             }
         }
         else{
 
              $this->gains = 0;
-            }
+        }
 
 
     }
@@ -54,4 +55,15 @@ class Jeux
     {
         return $this->score;
     }
+
+
+    public function setPersonnage($person)
+    {
+        $this->personnage = $person;
+    }
+    public function getPersonnage()
+    {
+        return $this->personnage;
+    }
+
 }
