@@ -23,10 +23,10 @@ body {
     left: 80%;
 }
 .lapin{
-    max-height: 150px;
-    max-width: 150px;
+    max-height: 200px;
+    max-width: 200px;
     position: absolute;
-    top: 51%;
+    top: 40%;
     left: 57%;
 }
 #vignette2{
@@ -37,8 +37,8 @@ body {
     margin: auto;
 }
 #vignette2{
-    max-height: 150px;
-    max-width: 150px;
+    max-height: 200px;
+    max-width: 200px;
     position: absolute;
     top: 25%;
     left: 60%;
