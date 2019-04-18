@@ -3,8 +3,8 @@
 {% block stylesheets %}
 {#<link rel="stylesheet" href="css/slotmachine.css">#}
 
-<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
-<link rel="stylesheet" href="css/slotmachine.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/slotmachine.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css"
     type="text/css" />
 {% endblock %}
@@ -13,68 +13,92 @@
 {% block body %}
 
 <div id="randomize">
-    <div class="container background"><a href="#" alt="oeuf" ><img src="images/oeufentier.png" style="width:44px;height:54px;" id="oeufentier"></a>
-            {% for oeuf in oeufs | slice ( 37 , 1) %}
-        <h1> Egg fact<img src="{{ oeuf }}" style="width:44px;height:54px;" />ry!</h1>
-        {% endfor %}
-       
-        <div class="row">
+
+    <div class="container">
+        <div class="background">
+            <div class="row">
+
+                <div class="col-sm-10"> {% for oeuf in oeufs | slice ( 37 , 1) %}
+                    <img src="{{ oeuf }}" style="width:44px;height:54px;" />
+
+                    {% endfor %}<div class="col-sm-2"></div>
+                    <h1> Egg fact<a href="#" alt="oeuf"><img src="../images/oeufentier.png"
+                                style="width:44px;height:54px;" id="oeufentier"></a>ry!<img src="../images/lapin7.gif"
+                            style="width:144px;height:154px;" id="lapi"></h1>
+                </div>
 
 
-            <div class="col-sm-4">
-                <div>
-                    <div id="machine1" class="randomizeMachine">
-                        {% for oeuf in oeufs | slice ( 0 , 8) %}
-                        <div><img src="{{ oeuf }}" style="width:100px;height:100px;" /></div>
-                        {% endfor %}
 
-                    </div>
-                </div>
-                <div id="machine1Result" class="col-xs-4 machineResult">Index: 0</div>
+
             </div>
 
-            <div class="col-sm-4">
-                <div>
-                    <div id="machine2" class="randomizeMachine">
-                        {% for oeuf in oeufs | slice ( 0 , 8) %}
-                        <div><img src="{{ oeuf }}" style="width:100px;height:100px;" /></div>
-                        {% endfor %}
-                    </div>
-                </div>
-                <div id="machine2Result" class="col-xs-4 machineResult">Index: 1</div>
-            </div>
 
-            <div class="col-sm-4">
-                <div>
-                    <div id="machine3" class="randomizeMachine">
-                        {% for oeuf in oeufs | slice ( 0 , 8) %}
-                        <div><img src="{{ oeuf }}" style="width:100px;height:100px;" /></div>
-                        {% endfor %}
+            <div class="row">
+
+
+
+                <div class="col-sm-4">
+                    <div>
+                        <div id="machine1" class="randomizeMachine">
+                            {% for oeuf in oeufs | slice ( 0 , 8) %}
+                            <div><img src="{{ oeuf }}" style="width:100px;height:100px;" /></div>
+                            {% endfor %}
+
+                        </div>
                     </div>
+                    <div id="machine1Result" class="col-xs-4 machineResult">Index: 0</div>
                 </div>
-                <div id="machine3Result" class="col-xs-4 machineResult">Index: 2</div>
-            </div>
-            <div class="col-sm-4">
-                <div>
-                    <div id="machine4" class="randomizeMachine">
-                        {% for oeuf in oeufs | slice ( 0 , 8) %}
-                        <div><img src="{{ oeuf }}" style="width:100px;height:100px;" /></div>
-                        {% endfor %}
+
+                <div class="col-sm-4">
+                    <div>
+                        <div id="machine2" class="randomizeMachine">
+                            {% for oeuf in oeufs | slice ( 0 , 8) %}
+                            <div><img src="{{ oeuf }}" style="width:100px;height:100px;" /></div>
+                            {% endfor %}
+                        </div>
                     </div>
+                    <div id="machine2Result" class="col-xs-4 machineResult">Index: 1</div>
                 </div>
-                <div id="machine4Result" class="col-xs-4 machineResult">Index: 3</div>
-            </div>
-            <div class="col-sm-4">
-                <div>
-                    <div id="machine5" class="randomizeMachine">
-                        {% for oeuf in oeufs | slice ( 0 , 8) %}
-                        <div><img src="{{ oeuf }}" style="width:100px;height:100px;" /></div>
-                        {% endfor %}
+
+                <div class="col-sm-4">
+                    <div>
+                        <div id="machine3" class="randomizeMachine">
+                            {% for oeuf in oeufs | slice ( 0 , 8) %}
+                            <div><img src="{{ oeuf }}" style="width:100px;height:100px;" /></div>
+                            {% endfor %}
+                        </div>
                     </div>
+                    <div id="machine3Result" class="col-xs-4 machineResult">Index: 2</div>
                 </div>
-                <div id="machine5Result" class="col-xs-4 machineResult">Index: 3</div>
-            </div>
-            <div class="col-sm-4">
+
+                <div class="col-sm-4 align-rigth">
+                    <input type="text" name="name" placeholder="name">
+                </div>
+            </div><br>
+            <!--end 1 row-->
+            <div class="row">
+
+                <div class="col-sm-4">
+                    <div>
+                        <div id="machine4" class="randomizeMachine">
+                            {% for oeuf in oeufs | slice ( 0 , 8) %}
+                            <div><img src="{{ oeuf }}" style="width:100px;height:100px;" /></div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div id="machine4Result" class="col-xs-4 machineResult">Index: 3</div>
+                </div>
+                <div class="col-sm-4">
+                    <div>
+                        <div id="machine5" class="randomizeMachine">
+                            {% for oeuf in oeufs | slice ( 0 , 8) %}
+                            <div><img src="{{ oeuf }}" style="width:100px;height:100px;" /></div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div id="machine5Result" class="col-xs-4 machineResult">Index: 3</div>
+                </div>
+                <div class="col-sm-4">
                     <div>
                         <div id="machine6" class="randomizeMachine">
                             {% for oeuf in oeufs | slice ( 0 , 8) %}
@@ -85,14 +109,20 @@
                     <div id="machine6Result" class="col-xs-4 machineResult">Index: 4</div>
                 </div>
 
+                <div class="col-sm-4 align-rigth">
+                    <input type="text" name="score" placeholder="score">
+                </div>
+            </div>
+
             <div class="btn-group btn-group-justified" role="group">
                 <button id="randomizeButton" type="button" class="btn btn-danger btn-lg">Shuffle</button>
             </div>
         </div>
 
-
     </div>
 </div>
+
+
 
 
 
@@ -116,8 +146,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
 </script>
-<script src="js/slotmachine.js"></script>
-<script src="js/jquery.slotmachine.js"></script>
+<script src="../js/slotmachine.js"></script>
+<script src="../js/jquery.slotmachine.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"
@@ -135,10 +165,10 @@
     hljs.initHighlightingOnLoad();
 </script>
 <script>
-        $("#oeufentier").click(function (){
-          $(this).attr("src","/images/oeuf.png");
-        });
-    </script>
+    $("#oeufentier").click(function () {
+        $(this).attr("src", "/images/oeuf.png");
+    });
+</script>
 <script id="codeScript2">
     const btn = document.querySelector('#randomizeButton');
     const results = {

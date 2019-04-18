@@ -6,7 +6,8 @@ body {
     
     width:1024px;
     height:764px;
-    margin-left: 0%;
+    margin-right: 0%;
+    margin-top: 0%;
  }
   
  h1{
@@ -14,3 +15,22 @@ body {
      padding-bottom:25px;
      color:white;
  }
+ /* The animation code */
+@keyframes example {
+    from {-ms-transform: translate(600px, 0px); /* IE 9 */
+        -webkit-transform: translate(600px, 0px); /* Safari */
+        transform: translate(600px,0px);}
+    to {-ms-transform: translate(-115000px, 0px); /* IE 9 */
+        -webkit-transform: translate(-115000px, 0px); /* Safari */
+        transform: translate(-115000px, 0px);}
+  }
+ #lapi{
+    
+    animation-name: example;
+    animation-duration: 298s;
+    z-index: 9999;
+ }
+ .input{
+    margin-left:65%;
+ }
+
