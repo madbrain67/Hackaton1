@@ -8,10 +8,10 @@
 {% block body %}
     <div class="container">
     <div id="bubble2" class="bubble row col-12">
-        <p>Je vien de me faire plaquer par ma lapine ... <br/>et actuellement il me reste que 100$.. <br/>Merde je me suis même pas présenter !<br/>Moi c’est Luke Skyhopper et toi ? </p>
+        <p>Je vien de me faire plaquer par ma lapine ... <br/>et actuellement il me reste que 100$.. <br/>Merde je me suis même pas présenter !<br/>Moi c’est Luke Skyhopperte et toi ? </p>
     </div>
     <div class="row">
-    {% for personnage in personnage | slice ( 1 , 4) %}
+    {% for personnage in personnage | slice ( 6 , 4) %}
         <div class="col-2 ml-3">
         <div class="card" style="width: 12rem;"><br/>
             <img style="width: 150px;height: 150px;" src="{{ personnage.image }}" class="card-img-top">
@@ -19,12 +19,12 @@
                 <h5 class="card-title">{{ personnage.name }}</h5>
                 <p class="card-text">
 
-                </p><a href="#" class="btn btn-primary">Choisir</a>
+                </p><a href="/Persochoisit/index{{ personnage.name| length }}" class="boutonperso btn btn-secondary btn-lg">Choisir</a>
                 <div/>
             </div>
         </div>
         </div>
-                </div>
+    </div>
     {% endfor %}
 
 <div class="col-3">

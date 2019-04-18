@@ -54,3 +54,53 @@ body {
 .card h5{
     color: #818182;
 }
+#bouttont, .boutonperso, .card h5, #bouttonoui, #bouttonnon{
+    position: absolute;
+    top: 75%;
+    left: 80%;
+
+    font: 200 2em/1 "Oswald", sans-serif;
+    letter-spacing: 0.2px;
+    /*padding: .25em 0 .325em;*/
+    display: block;
+    margin: 0 auto;
+    text-shadow: 0 0 80px rgba(255,255,255,.5);
+
+/* Clip Background Image */
+
+    background: url(http://f.cl.ly/items/010q3E1u3p2Q0j1L1S1o/animated_text_fill.png) repeat-y;
+    -webkit-background-clip: text;
+    background-clip: text;
+
+/* Animate Background Image */
+
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: aitf 35s linear infinite;
+
+/* Activate hardware acceleration for smoother animations */
+
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden;
+
+}
+@-webkit-keyframes aitf {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+.boutonperso{
+    top: 93%;
+    left: 11%;
+}
+.card h5{
+    font-size: 1.1em;
+    top: 78%;
+    left: 11.5%;
+}
+#bouttonoui{
+    top: 80%;
+    left: 80%;
+}
+#bouttonnon{
+    left: 70%;
+    top: 80%;
+}
