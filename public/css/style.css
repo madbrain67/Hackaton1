@@ -17,8 +17,9 @@
 /*
  * SlotMachine
  */
+ /*couleur de fond */
 #randomize {
-  background-color:black;
+  background-color:rgb(72, 68, 68);
 }
 /*couleur vignette*/
 #randomize .row > div.col-sm-4 > div {
@@ -63,6 +64,7 @@
   background: transparent !important;
   font-size: 18px;
   padding: 10px !important;
+  visibility: hidden;
 }
 
 .machineContainer{
