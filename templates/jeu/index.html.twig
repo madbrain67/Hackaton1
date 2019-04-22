@@ -102,7 +102,13 @@
                         </div>
 
                         <div class="btn-group btn-group-justified" role="group">
-                            <button id="randomizeButton" type="button" class="btn btn-danger btn-lg">JOUER</button>
+                            <button id="randomizeButton" type="button" class="btn btn-danger btn-lg">JOUER X2</button>
+                        </div>
+                        <div class="btn-group btn-group-justified" role="group">
+                            <button id="buttoX5" type="button" class="btn btn-warning btn-lg">JOUER X5</button>
+                        </div>
+                        <div class="btn-group btn-group-justified" role="group">
+                            <button id="buttoX10" type="button" class="btn btn-success btn-lg">JOUER X10</button>
                         </div>
 
                         <div class="btn-group btn-group-justified" style="background:white;width:200px;padding:10px;">
@@ -156,13 +162,18 @@
 
     </div>
 </div>
-
-<div id="aaa"></div>
+<audio id="carteSoundGains">
+  <source src="/sound/2713.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<audio id="carteSoundRoulement">
+  <source src="/sound/sf_tictac_01.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
 {% endblock %}
 
 {% block javascripts %}
-
-<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="../js/slotmachine.js"></script>
@@ -170,143 +181,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"></script>
+<script src="../js/jeux.js"></script>
 <script>
     $("#oeufentier").click(function () {
         $(this).attr("src", "/images/oeuf.png");
     });
-</script>
-
-<script>
-$(document).ready(function() {
-    console.log($.ajax);
-});
-</script>
-
-<script id="codeScript2">
-
-    const btn = document.querySelector('#randomizeButton');
-    const results = {
-        machine1: document.querySelector('#machine1Result'),
-        machine2: document.querySelector('#machine2Result'),
-        machine3: document.querySelector('#machine3Result'),
-        machine4: document.querySelector('#machine4Result'),
-        machine5: document.querySelector('#machine5Result'),
-        machine6: document.querySelector('#machine6Result')
-    };
-    const el1 = document.querySelector('#machine1');
-    const el2 = document.querySelector('#machine2');
-    const el3 = document.querySelector('#machine3');
-    const el4 = document.querySelector('#machine4');
-    const el5 = document.querySelector('#machine5');
-    const el6 = document.querySelector('#machine6');
-    const machine1 = new SlotMachine(el1, {
-        active: 0
-    });
-    const machine2 = new SlotMachine(el2, {
-        active: 1
-    });
-    const machine3 = new SlotMachine(el3, {
-        active: 2
-    });
-    const machine4 = new SlotMachine(el4, {
-        active: 3
-    });
-    const machine5 = new SlotMachine(el5, {
-        active: 4
-    });
-    const machine6 = new SlotMachine(el6, {
-        active: 5
-    });
-
-
-    function counter(tableau) {
-        //alert(tableau);
-        var myCurrentArray = tableau;
-
-        var counts = {};
-
-        for(var i=0;i< myCurrentArray.length;i++)
-        {
-        var key = myCurrentArray[i];
-        counts[key] = (counts[key])? counts[key] + 1 : 1 ;
-
-        }
-        
-        var combinaison = new Array();
-        combinaison.push(counts['0']);
-        combinaison.push(counts['1']);
-        combinaison.push(counts['2']);
-        combinaison.push(counts['3']);
-        combinaison.push(counts['4']);
-        combinaison.push(counts['5']);
-        combinaison.push(counts['6']);
-        combinaison.push(counts['7']);
-        combinaison.push(counts['8']);
-
-        //alert(combinaison);
-        
-        var prize = 0; 
-        
-        for(u=0;u<combinaison.length;u++) {
-            switch (combinaison[u])
-            {
-                case 2:
-                prize += 2;
-                break;
-                case 3:
-                prize += 10;
-                break;
-                case 4:
-                prize += 30;
-                break;
-                case 5:
-                prize += 50;
-                break;
-                case 6:
-                prize += 100;
-                break;
-                default: 
-                prize += 0;
-            }
-        }
-        //alert(prize);
-
-        $("#gagner").text('Gain:' + prize);
-
-        var gains = $("#gain").text();
-        var $newGains = parseInt(gains) + parseInt(prize);
-        $("#gain").text($newGains);
-    }
-    
-    function startCounter(){
-        $("#gagner").text('No gain');
-        var scored = new Array();
-        return scored;
-    }
-
-    function onComplete(active) {
-        results[this.element.id].innerText = `${this.active}`;
-        scored.push(`${this.active}`);
-    }
-
-    btn.addEventListener('click', () => {
-        scored = startCounter();
-        machine1.shuffle(5, onComplete);
-        setTimeout(() => machine2.shuffle(5, onComplete), 300);
-        setTimeout(() => machine3.shuffle(5, onComplete), 600);
-        setTimeout(() => machine4.shuffle(5, onComplete), 900);
-        setTimeout(() => machine5.shuffle(5, onComplete), 1200);
-        setTimeout(() => machine6.shuffle(5, onComplete), 1500);
-        setTimeout(() => counter(scored), 3000);
-    });
-
-</script>
-
-<script>
-$("#randomizeButton").click(function( event ){
-    event.preventDefault();
-    var gains = $("#gain").text();
-    $("#gain").text(gains - 2);
-});
 </script>
 {% endblock %}

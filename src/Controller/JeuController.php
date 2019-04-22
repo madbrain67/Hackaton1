@@ -9,19 +9,15 @@ class JeuController extends AbstractController
     public function index()
     {
         
-        $jeux = new Jeux();
-        $gain = $jeux->getGains();
-        $jeux->setPersonnage($_SESSION["jeux"]->personnage);
-        $pers = $jeux->getPersonnage();
-
-
-        //echo '<pre>'.print_r($_SESSION["jeux"], true).'</pre>';
-
+        $jeux = new Jeux($_SESSION["jeux"]->personnage, $_SESSION["jeux"]->gains);
+        $gains = $jeux->getGains();
+        $personnage = $jeux->getPersonnage();
+        //echo '<pre>'.print_r($personnage, true).'</pre>';
 
         return $this->twig->render(
             'jeu/index.html.twig', [
-            'gain' => $gain,
-            'personne' => $pers,
+            'gain' => intval($gains),
+            'personne' => $personnage,
             ]
         );
 

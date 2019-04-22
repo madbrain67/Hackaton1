@@ -1,69 +1,96 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: stephaneaugustin
- * Date: 2019-04-17
- * Time: 17:38
- */
+
 
 namespace App\Service;
-
 
 class Jeux
 {
 
-    private $score;
     private $gains;
-    private $findejeux;
     private $personnage;
 
-    public function __construct($start = null)
+
+    public function __construct($personnage = null, $gains = null)
     {
-        if($start == null ) {
-            $this->score = 0;
-            $this->gains = 100;
+        if($personnage !== null && $gains !== null) {
+            $this->gains = $gains;
+            $this->personnage = $personnage;
         }
+    }
+
+    /**
+     * SET ET GET GAINS
+     */
+    private function setGains($gains)
+    {
+        $this->gains = $gains;
     }
 
     public function getGains()
     {
-
         return $this->gains;
     }
-    public function setGains($score)
-    {
-        if($this->getGains()>0) {
-            if($score>0) {
-                $this->gains += $score;
-            }
-            else{
-                $this->gains -= $score;
-            }
-        }
-        else{
-
-             $this->gains = 0;
-        }
 
 
-    }
-    public function setScore($score)
+
+    /**
+     * SET ET GET PERSONNAGE
+     */
+    private function setPersonnage($personnage)
     {
-        $this->score += $score;
-    }
-    public function getScore()
-    {
-        return $this->score;
+        $this->personnage = $personnage;
     }
 
 
-    public function setPersonnage($person)
-    {
-        $this->personnage = $person;
-    }
     public function getPersonnage()
     {
         return $this->personnage;
     }
 
+
+    /**
+     *  SLOT
+     */
+    public function slot(int $gains, array $tab, int $mise) : int
+    {
+        $multiplicateurGains = $mise / 2; 
+        $prize = 0;
+        $result = array_count_values($tab);
+        foreach($result as $key => $value)
+        {
+            switch ($value)
+            {
+            case 2:
+                $prize += ($multiplicateurGains / 2);
+                break;
+            case 3 :
+                $prize += ($multiplicateurGains * 10);
+                break;
+            case 4 :
+                $prize += ($multiplicateurGains * 30);
+                break;
+            case 5 :
+                $prize += ($multiplicateurGains * 50);
+                break;
+            case 6 :
+                $prize += ($multiplicateurGains * 100);
+                break;
+            default: 
+                $prize += 0;
+                break;
+            }
+         
+        }  
+        $prize = round($prize);
+
+        if ($prize < ($multiplicateurGains)) { 
+            $prize = 0;
+        }
+        
+        $this->setGains($gains);
+        $NewGains = $this->getGains() + $prize;
+        $this->setGains($NewGains);
+        return $prize;
+        
+    }
 }
